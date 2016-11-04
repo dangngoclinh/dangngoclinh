@@ -1,0 +1,20 @@
+{
+  "name": "font-end-dangngoclinh",
+  "homepage": "https://github.com/dangngoclinh/dangngoclinh",
+  "authors": [
+    "Liam Dang <dangngoclinh90@gmail.com>"
+  ],
+  "description": "font-end",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
