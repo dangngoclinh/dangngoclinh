@@ -21,16 +21,26 @@ class GroupController extends BaseFBController
 	}
 
 	//group/add
-	public function add()
+	public function add($id = null)
 	{
+		if($id != null)
+		{
+			$groupInfo = $this->myfbac->getGroupInfo($id, Session::get('token'))->asArray();
+			if(count($groupInfo) > 0)
+			{
+				$group = $groupInfo[0];
+				return Response::json($group);
+			}
+		}
+
 		$this->data['pagetitle'] = "Thêm Group";
 		return view('admin.facebook.group.add', $this->data);
 	}
 
-	public function group_search($id)
+	public function search($id)
 	{
 		$groupInfo = $this->myfbac->getGroupInfo($id, Session::get('token'));
-		return $groupInfo->asJson();
+		return Response::json($groupInfo->asArray());
 	}
 
 	public function group_post($id, $message)
